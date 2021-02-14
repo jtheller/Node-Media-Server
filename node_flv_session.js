@@ -73,7 +73,7 @@ class NodeFlvSession {
     context.nodeEvent.emit("postConnect", this.id, this.connectCmdObj);
 
     if (method === "GET") {
-      this.playStreamPath = streamPath;
+      this.playStreamPath = decodeURIComponent(streamPath);
       this.playArgs = urlInfo.query;
 
       this.onPlay();
